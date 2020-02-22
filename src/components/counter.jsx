@@ -23,7 +23,7 @@ class Counter extends Component {
         console.log(product);
         this.setState({value: this.state.value + 1})
     }
-    decrementCounter = (product) =>{
+    deleteCounter = (product) =>{
         //to change state property;
         console.log(product)
         this.setState({value: this.state.value - 1})
@@ -56,10 +56,10 @@ class Counter extends Component {
                 {/* <img src={this.state.imageUrl} alt=""></img> */}
                 {/* {this.props.children} */}
                 <span style={this.style} className={this.getBadgeClasses()}>{this.formatCounter()}</span>
-                <button style={{ 'fontSize': '16px','padding':'5px','margin':'5px' }} className="btn btn-secondary btn-sm" onClick={() => this.incrementCounter("product")}>Counter Increment</button>
+                <button style={{ 'fontSize': '16px','padding':'5px','margin':'5px' }} className="btn btn-secondary btn-sm" onClick={() => this.incrementCounter("product")}>Add</button>
                 {/* To pass parameters into function */}
                 {/* <button onClick={()=> this.productDetails("product")}>Product</button> */}
-                <button style={{ 'fontSize': '16px', 'padding':'5px','margin':'5px'}} className="btn btn-secondary btn-sm" onClick={() => this.decrementCounter("product")}>Counter Decrement</button>
+                <button style={{ 'fontSize': '16px', 'padding':'5px','margin':'5px'}} className="btn btn-danger btn-sm" onClick={this.props.onDelete}>Delete</button>
                 {/* <div>
                     {this.state.tags.length ===0 && "Please create Tags"}
                     {this.renderTags()}
