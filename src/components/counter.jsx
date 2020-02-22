@@ -8,7 +8,15 @@ class Counter extends Component {
         // tags: []
     }
 
+    //LIFECYCLE HOOKS
+    componentDidUpdate(prevProps,prevState){
+        console.log(prevProps)
+        console.log(prevState)
+    }
 
+    componentWillMount(){
+        console.log("unmount")
+    }
     // EVENT HANDLERS
     //this cant be used in the methods which are called on events (onClick) ie. it should be bind to the method. So we use constructor and bind "this" using ".bind" property
     constructor(props){
