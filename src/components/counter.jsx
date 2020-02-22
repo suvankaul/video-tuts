@@ -23,6 +23,9 @@ class Counter extends Component {
         //to change state property;
         this.setState({count: this.state.count - 1})
     }
+    productDetails = (product) =>{
+        console.log(product)
+    }
 
     style = {
         fontSize: '10px',
@@ -48,6 +51,8 @@ class Counter extends Component {
                 {/* <img src={this.state.imageUrl} alt=""></img> */}
                 <span style={this.style} className={this.getBadgeClasses()}>{this.formatCounter()}</span>
                 <button style={{ 'fontSize': '16px','padding':'5px','margin':'5px' }} className="btn btn-secondary btn-sm" onClick={this.incrementCounter}>Counter Increment</button>
+                {/* To pass parameters into function */}
+                <button onClick={()=> this.productDetails("product")}>Product</button>
                 <button style={{ 'fontSize': '16px', 'padding':'5px','margin':'5px'}} className="btn btn-secondary btn-sm" onClick={this.decrementCounter}>Counter Decrement</button>
                 <div>
                     {this.state.tags.length ===0 && "Please create Tags"}
